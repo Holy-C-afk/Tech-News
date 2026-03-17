@@ -26,9 +26,16 @@
   blockquote{border-left:3px solid var(--accent);padding:1rem 1.5rem;background:var(--surface);margin:2rem 0;font-style:italic;color:var(--text-muted);}
   .meta{font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-muted);letter-spacing:0.1em;display:flex;gap:1.5rem;margin-bottom:3rem;flex-wrap:wrap;}
   .tag{background:#0d2035;color:var(--accent);border:1px solid rgba(0,229,255,.2);padding:2px 8px;border-radius:2px;}
+
+  .ad-rail{position:fixed;top:84px;width:160px;padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text-muted);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;line-height:1.4;}
+  .ad-left{left:16px}
+  .ad-right{right:16px}
+  @media (max-width: 1280px){ .ad-rail{display:none} }
 </style>
 </head>
 <body>
+<aside class="ad-rail ad-left" aria-label="Advertisement"><div style="color:var(--text);font-weight:500;margin-bottom:6px;">Ad</div><div>160×600</div></aside>
+<aside class="ad-rail ad-right" aria-label="Advertisement"><div style="color:var(--text);font-weight:500;margin-bottom:6px;">Ad</div><div>160×600</div></aside>
 <header><a href="/">← NEURAL<span style="color:var(--accent)">FEED</span></a></header>
 <div class="container">
   <h1>Self-Hosting LLMs: A Comprehensive Hardware Guide</h1>
