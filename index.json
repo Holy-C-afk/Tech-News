@@ -1,11 +1,932 @@
 [
   {
-    "title": "Self-Hosting LLMs: A Comprehensive Hardware Guide",
-    "slug": "self-hosting-llms-hardware-guide",
-    "excerpt": "",
+    "title": "LangChain vs LlamaIndex: Building AI Agents in 2026",
+    "slug": "langchain-vs-llamaindex-ai-agents-2026",
+    "excerpt": "A deep comparison of LangChain and LlamaIndex for building production AI agents. We break down strengths, weaknesses, and when to use each.",
+    "category": "AI Agents",
+    "tags": ["AI Agents", "LangChain", "LlamaIndex", "Developer Tools"],
+    "readingTime": "11 min read",
+    "publishedAt": "2026-03-17T09:00:00.000Z",
+    "url": "articles/langchain-vs-llamaindex-ai-agents-2026.html"
+  },
+  {
+    "title": "Open Source LLMs: A 2026 Deep Dive",
+    "slug": "open-source-llms-2026-deep-dive",
+    "excerpt": "The open-source LLM ecosystem has matured dramatically. Here's everything you need to know about the top models and where they're headed.",
+    "category": "AI Research",
+    "tags": ["LLMs", "Open Source", "AI Research", "Developer Tools"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-03-15T09:00:00.000Z",
+    "url": "articles/open-source-llms-2026-deep-dive.html"
+  },
+  {
+    "title": "RAG vs Fine-Tuning: A Decision Framework",
+    "slug": "rag-vs-fine-tuning-decision-framework",
+    "excerpt": "When should you use retrieval-augmented generation and when should you fine-tune? This practical framework helps you decide fast.",
     "category": "AI",
-    "readingTime": "5 min read",
-    "publishedAt": "2026-03-17T04:34:42.775Z",
+    "tags": ["RAG", "Fine-Tuning", "LLMs", "AI"],
+    "readingTime": "8 min read",
+    "publishedAt": "2026-03-13T09:00:00.000Z",
+    "url": "articles/rag-vs-fine-tuning-decision-framework.html"
+  },
+  {
+    "title": "Vector Databases Compared: Pinecone vs Weaviate vs Qdrant",
+    "slug": "vector-databases-pinecone-weaviate-qdrant",
+    "excerpt": "We benchmarked three leading vector databases on speed, cost, and developer experience. The results will change how you architect your AI stack.",
+    "category": "Dev Tools",
+    "tags": ["Vector DB", "Pinecone", "Weaviate", "Qdrant"],
+    "readingTime": "12 min read",
+    "publishedAt": "2026-03-11T09:00:00.000Z",
+    "url": "articles/vector-databases-pinecone-weaviate-qdrant.html"
+  },
+  {
+    "title": "Building a Production RAG Pipeline Under $20/Month",
+    "slug": "production-rag-pipeline-under-20-dollars",
+    "excerpt": "A fully self-hosted retrieval-augmented generation stack with Llama 3 and PgVector. Step-by-step guide with real cost breakdown.",
+    "category": "Tutorial",
+    "tags": ["RAG", "Llama 3", "PgVector", "Self-Hosted"],
+    "readingTime": "14 min read",
+    "publishedAt": "2026-03-09T09:00:00.000Z",
+    "url": "articles/production-rag-pipeline-under-20-dollars.html"
+  },
+  {
+    "title": "Streaming LLM APIs With FastAPI and Server-Sent Events",
+    "slug": "streaming-llm-apis-fastapi-sse",
+    "excerpt": "Build a production-ready streaming endpoint for LLMs using FastAPI and SSE. Includes retry logic, token counting, and error handling.",
+    "category": "Tutorial",
+    "tags": ["FastAPI", "SSE", "Streaming", "Python"],
+    "readingTime": "13 min read",
+    "publishedAt": "2026-03-07T09:00:00.000Z",
+    "url": "articles/streaming-llm-apis-fastapi-sse.html"
+  },
+  {
+    "title": "Cursor vs Windsurf vs Copilot: Real Benchmark 2026",
+    "slug": "cursor-windsurf-copilot-benchmark-2026",
+    "excerpt": "We tested three AI code editors on 50 real-world tasks across Python, TypeScript, and Rust. The results are not what you'd expect.",
+    "category": "Dev Tools",
+    "tags": ["Cursor", "Copilot", "Windsurf", "AI Editors"],
+    "readingTime": "11 min read",
+    "publishedAt": "2026-03-05T09:00:00.000Z",
+    "url": "articles/cursor-windsurf-copilot-benchmark-2026.html"
+  },
+  {
+    "title": "Async Python in 2026: Patterns That Actually Scale",
+    "slug": "async-python-2026-patterns-that-scale",
+    "excerpt": "Move beyond basic coroutines. TaskGroups, exception groups, and structured concurrency patterns for Python async in production.",
+    "category": "Backend",
+    "tags": ["Python", "Async", "asyncio", "Backend"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-03-03T09:00:00.000Z",
+    "url": "articles/async-python-2026-patterns-that-scale.html"
+  },
+  {
+    "title": "Prompt Engineering Is Dead. Long Live System Design",
+    "slug": "prompt-engineering-dead-system-design",
+    "excerpt": "Why the future of AI products is architecture, not prompt tricks. A frank look at what actually moves the needle in production AI systems.",
+    "category": "AI",
+    "tags": ["Prompt Engineering", "System Design", "AI", "LLMs"],
+    "readingTime": "7 min read",
+    "publishedAt": "2026-03-01T09:00:00.000Z",
+    "url": "articles/prompt-engineering-dead-system-design.html"
+  },
+  {
+    "title": "The Attention Mechanism Revolution: How LLMs Think",
+    "slug": "attention-mechanism-revolution-llms",
+    "excerpt": "From vanilla attention to flash attention — a technical deep dive into the transformer architecture powering today's frontier models.",
+    "category": "AI Research",
+    "tags": ["Transformers", "Attention", "LLMs", "AI Research"],
+    "readingTime": "15 min read",
+    "publishedAt": "2026-02-28T09:00:00.000Z",
+    "url": "articles/attention-mechanism-revolution-llms.html"
+  },
+  {
+    "title": "Self-Hosting LLMs: The Complete Hardware Guide",
+    "slug": "self-hosting-llms-hardware-guide",
+    "excerpt": "What hardware do you actually need to run Llama 3, Mistral, or Gemma locally? Real benchmarks, real costs, real recommendations.",
+    "category": "Open Source",
+    "tags": ["Self-Hosting", "LLMs", "Hardware", "Ollama"],
+    "readingTime": "12 min read",
+    "publishedAt": "2026-02-26T09:00:00.000Z",
     "url": "articles/self-hosting-llms-hardware-guide.html"
+  },
+  {
+    "title": "Nix Flakes for Python: Finally Reproducible Environments",
+    "slug": "nix-flakes-python-reproducible-environments",
+    "excerpt": "Stop fighting virtualenv hell. This Nix setup works across macOS and Linux without compromise, and your team will thank you.",
+    "category": "Dev Tools",
+    "tags": ["Nix", "Python", "DevOps", "Reproducibility"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-02-24T09:00:00.000Z",
+    "url": "articles/nix-flakes-python-reproducible-environments.html"
+  },
+  {
+    "title": "12 Open-Source AI Projects to Watch in 2026",
+    "slug": "12-open-source-ai-projects-2026",
+    "excerpt": "From inference engines to agent frameworks, these are the GitHub repos shipping the most interesting AI code right now.",
+    "category": "Open Source",
+    "tags": ["Open Source", "AI", "GitHub", "Developer Tools"],
+    "readingTime": "6 min read",
+    "publishedAt": "2026-02-22T09:00:00.000Z",
+    "url": "articles/12-open-source-ai-projects-2026.html"
+  },
+  {
+    "title": "TypeScript 6: What Developers Actually Care About",
+    "slug": "typescript-6-what-developers-care-about",
+    "excerpt": "TypeScript 6 ships with major improvements to type inference, performance, and DX. Here's what matters for your day-to-day work.",
+    "category": "Dev Tools",
+    "tags": ["TypeScript", "JavaScript", "Frontend", "Developer Tools"],
+    "readingTime": "8 min read",
+    "publishedAt": "2026-02-20T09:00:00.000Z",
+    "url": "articles/typescript-6-what-developers-care-about.html"
+  },
+  {
+    "title": "Building AI Agents With Claude: A Practical Guide",
+    "slug": "building-ai-agents-claude-practical-guide",
+    "excerpt": "Claude's API is uniquely suited for building reliable AI agents. Here's how to architect, prompt, and deploy agents that don't hallucinate.",
+    "category": "AI Agents",
+    "tags": ["Claude", "AI Agents", "Anthropic", "Tutorial"],
+    "readingTime": "13 min read",
+    "publishedAt": "2026-02-18T09:00:00.000Z",
+    "url": "articles/building-ai-agents-claude-practical-guide.html"
+  },
+  {
+    "title": "Rust for AI Systems: Why and How to Start",
+    "slug": "rust-for-ai-systems-why-and-how",
+    "excerpt": "Python dominates AI, but Rust is quietly taking over the infrastructure layer. Here's why it matters and how to get started.",
+    "category": "Backend",
+    "tags": ["Rust", "AI", "Systems Programming", "Performance"],
+    "readingTime": "11 min read",
+    "publishedAt": "2026-02-16T09:00:00.000Z",
+    "url": "articles/rust-for-ai-systems-why-and-how.html"
+  },
+  {
+    "title": "The Complete Guide to Embeddings in 2026",
+    "slug": "complete-guide-embeddings-2026",
+    "excerpt": "Embeddings power semantic search, RAG, and recommendation systems. This guide covers everything from theory to production deployment.",
+    "category": "AI Research",
+    "tags": ["Embeddings", "Semantic Search", "NLP", "AI"],
+    "readingTime": "14 min read",
+    "publishedAt": "2026-02-14T09:00:00.000Z",
+    "url": "articles/complete-guide-embeddings-2026.html"
+  },
+  {
+    "title": "Docker in 2026: What's Changed and What Matters",
+    "slug": "docker-2026-whats-changed",
+    "excerpt": "Docker has evolved significantly. From rootless containers to WebAssembly support, here's what every developer needs to know in 2026.",
+    "category": "Dev Tools",
+    "tags": ["Docker", "Containers", "DevOps", "Cloud"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-02-12T09:00:00.000Z",
+    "url": "articles/docker-2026-whats-changed.html"
+  },
+  {
+    "title": "Mistral 3 vs Llama 4: Which Should You Use?",
+    "slug": "mistral-3-vs-llama-4-comparison",
+    "excerpt": "Two open-source giants, head to head. We compare Mistral 3 and Llama 4 on reasoning, speed, cost, and real-world task performance.",
+    "category": "AI Research",
+    "tags": ["Mistral", "Llama", "LLMs", "Benchmarks"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-02-10T09:00:00.000Z",
+    "url": "articles/mistral-3-vs-llama-4-comparison.html"
+  },
+  {
+    "title": "GraphQL vs REST vs tRPC in 2026: The Definitive Guide",
+    "slug": "graphql-rest-trpc-2026-guide",
+    "excerpt": "After years of debate, which API paradigm actually wins in production? We break down the trade-offs with real benchmarks and use cases.",
+    "category": "Backend",
+    "tags": ["GraphQL", "REST", "tRPC", "API Design"],
+    "readingTime": "12 min read",
+    "publishedAt": "2026-02-08T09:00:00.000Z",
+    "url": "articles/graphql-rest-trpc-2026-guide.html"
+  },
+  {
+    "title": "Fine-Tuning Llama 4 on a Single GPU: Step by Step",
+    "slug": "fine-tuning-llama-4-single-gpu",
+    "excerpt": "You don't need a GPU cluster to fine-tune a frontier model. This step-by-step guide shows you how to fine-tune Llama 4 on one RTX 4090.",
+    "category": "Tutorial",
+    "tags": ["Fine-Tuning", "Llama", "GPU", "AI"],
+    "readingTime": "16 min read",
+    "publishedAt": "2026-02-06T09:00:00.000Z",
+    "url": "articles/fine-tuning-llama-4-single-gpu.html"
+  },
+  {
+    "title": "Redis in the AI Era: Caching, Queues, and Vector Search",
+    "slug": "redis-ai-era-caching-queues-vector-search",
+    "excerpt": "Redis has become a critical component in AI stacks. Here's how to use it for semantic caching, job queues, and vector similarity search.",
+    "category": "Backend",
+    "tags": ["Redis", "Caching", "Vector Search", "AI"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-02-04T09:00:00.000Z",
+    "url": "articles/redis-ai-era-caching-queues-vector-search.html"
+  },
+  {
+    "title": "Kubernetes for AI Workloads: A Practical Introduction",
+    "slug": "kubernetes-ai-workloads-practical-intro",
+    "excerpt": "Running AI inference and training on Kubernetes is no longer optional for scaling teams. Here's how to do it right from day one.",
+    "category": "Cloud & Infra",
+    "tags": ["Kubernetes", "AI", "DevOps", "Scaling"],
+    "readingTime": "13 min read",
+    "publishedAt": "2026-02-02T09:00:00.000Z",
+    "url": "articles/kubernetes-ai-workloads-practical-intro.html"
+  },
+  {
+    "title": "The State of WebAssembly in 2026",
+    "slug": "state-of-webassembly-2026",
+    "excerpt": "WebAssembly has expanded far beyond the browser. From serverless edge functions to AI inference, WASM is reshaping the stack.",
+    "category": "Dev Tools",
+    "tags": ["WebAssembly", "WASM", "Edge", "Performance"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-01-31T09:00:00.000Z",
+    "url": "articles/state-of-webassembly-2026.html"
+  },
+  {
+    "title": "Building a Local AI Assistant With Ollama and Open WebUI",
+    "slug": "local-ai-assistant-ollama-open-webui",
+    "excerpt": "Run your own private ChatGPT-style assistant locally in under 30 minutes. No API costs, no data leaving your machine.",
+    "category": "Tutorial",
+    "tags": ["Ollama", "Open WebUI", "Self-Hosted", "Privacy"],
+    "readingTime": "8 min read",
+    "publishedAt": "2026-01-29T09:00:00.000Z",
+    "url": "articles/local-ai-assistant-ollama-open-webui.html"
+  },
+  {
+    "title": "PostgreSQL 17: The Features That Change Everything",
+    "slug": "postgresql-17-features-that-change-everything",
+    "excerpt": "PostgreSQL 17 ships with native vector support, improved JSON handling, and massive performance gains. Here's what matters for developers.",
+    "category": "Backend",
+    "tags": ["PostgreSQL", "Database", "SQL", "Backend"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-01-27T09:00:00.000Z",
+    "url": "articles/postgresql-17-features-that-change-everything.html"
+  },
+  {
+    "title": "How to Build a Multi-Agent AI System From Scratch",
+    "slug": "build-multi-agent-ai-system-from-scratch",
+    "excerpt": "Multi-agent systems are the next frontier in AI. This guide walks through architecture, orchestration, and real production pitfalls.",
+    "category": "AI Agents",
+    "tags": ["Multi-Agent", "AI Agents", "Architecture", "LLMs"],
+    "readingTime": "15 min read",
+    "publishedAt": "2026-01-25T09:00:00.000Z",
+    "url": "articles/build-multi-agent-ai-system-from-scratch.html"
+  },
+  {
+    "title": "Next.js 15 App Router: Patterns for Production",
+    "slug": "nextjs-15-app-router-production-patterns",
+    "excerpt": "The App Router has stabilized and production patterns have emerged. Here are the architecture decisions that separate good apps from great ones.",
+    "category": "Dev Tools",
+    "tags": ["Next.js", "React", "Frontend", "App Router"],
+    "readingTime": "11 min read",
+    "publishedAt": "2026-01-23T09:00:00.000Z",
+    "url": "articles/nextjs-15-app-router-production-patterns.html"
+  },
+  {
+    "title": "AI Code Review: Does It Actually Catch Real Bugs?",
+    "slug": "ai-code-review-does-it-catch-real-bugs",
+    "excerpt": "We ran AI code review tools on 200 real pull requests with known bugs. Here's the honest breakdown of what they caught and what they missed.",
+    "category": "Dev Tools",
+    "tags": ["Code Review", "AI", "Developer Tools", "Quality"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-01-21T09:00:00.000Z",
+    "url": "articles/ai-code-review-does-it-catch-real-bugs.html"
+  },
+  {
+    "title": "Securing AI APIs: Rate Limiting, Auth, and Abuse Prevention",
+    "slug": "securing-ai-apis-rate-limiting-auth-abuse",
+    "excerpt": "AI APIs are expensive and abusable. Here's a complete security architecture covering auth, rate limiting, cost controls, and abuse detection.",
+    "category": "Security",
+    "tags": ["Security", "API", "Rate Limiting", "AI"],
+    "readingTime": "12 min read",
+    "publishedAt": "2026-01-19T09:00:00.000Z",
+    "url": "articles/securing-ai-apis-rate-limiting-auth-abuse.html"
+  },
+  {
+    "title": "Go 1.24: What's New and Why It Matters",
+    "slug": "go-1-24-whats-new",
+    "excerpt": "Go 1.24 brings range-over functions, improved toolchain management, and significant runtime performance gains. Here's the developer's guide.",
+    "category": "Backend",
+    "tags": ["Go", "Golang", "Backend", "Performance"],
+    "readingTime": "8 min read",
+    "publishedAt": "2026-01-17T09:00:00.000Z",
+    "url": "articles/go-1-24-whats-new.html"
+  },
+  {
+    "title": "The Real Cost of Running AI in Production",
+    "slug": "real-cost-running-ai-in-production",
+    "excerpt": "Token costs, GPU bills, and hidden expenses — a brutally honest breakdown of what AI actually costs at different scales.",
+    "category": "AI",
+    "tags": ["AI", "Cost", "Production", "LLMs"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-01-15T09:00:00.000Z",
+    "url": "articles/real-cost-running-ai-in-production.html"
+  },
+  {
+    "title": "Terraform vs Pulumi in 2026: Infrastructure as Code Showdown",
+    "slug": "terraform-vs-pulumi-2026",
+    "excerpt": "Both tools have matured significantly. We compare Terraform and Pulumi on ergonomics, ecosystem, and real production use cases.",
+    "category": "Cloud & Infra",
+    "tags": ["Terraform", "Pulumi", "IaC", "DevOps"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-01-13T09:00:00.000Z",
+    "url": "articles/terraform-vs-pulumi-2026.html"
+  },
+  {
+    "title": "Observability for AI Systems: Tracing, Metrics, and Logs",
+    "slug": "observability-ai-systems-tracing-metrics-logs",
+    "excerpt": "AI systems fail in non-obvious ways. Here's how to build observability into your LLM pipelines from day one using OpenTelemetry.",
+    "category": "Cloud & Infra",
+    "tags": ["Observability", "AI", "OpenTelemetry", "Monitoring"],
+    "readingTime": "11 min read",
+    "publishedAt": "2026-01-11T09:00:00.000Z",
+    "url": "articles/observability-ai-systems-tracing-metrics-logs.html"
+  },
+  {
+    "title": "Python 3.14: The Features Worth Your Attention",
+    "slug": "python-3-14-features-worth-attention",
+    "excerpt": "Python 3.14 ships with t-strings, free-threaded mode improvements, and a faster interpreter. Here's what matters for everyday developers.",
+    "category": "Backend",
+    "tags": ["Python", "Programming", "Backend", "Developer Tools"],
+    "readingTime": "8 min read",
+    "publishedAt": "2026-01-09T09:00:00.000Z",
+    "url": "articles/python-3-14-features-worth-attention.html"
+  },
+  {
+    "title": "Evaluating LLM Outputs: Beyond Vibes-Based Testing",
+    "slug": "evaluating-llm-outputs-beyond-vibes-testing",
+    "excerpt": "How do you know if your LLM is actually performing well? A practical guide to LLM evaluation frameworks, metrics, and automated testing.",
+    "category": "AI Research",
+    "tags": ["LLM Evaluation", "Testing", "AI Quality", "ML Ops"],
+    "readingTime": "12 min read",
+    "publishedAt": "2026-01-07T09:00:00.000Z",
+    "url": "articles/evaluating-llm-outputs-beyond-vibes-testing.html"
+  },
+  {
+    "title": "Edge AI: Running Models on the Client in 2026",
+    "slug": "edge-ai-running-models-client-2026",
+    "excerpt": "WebGPU and quantized models have made client-side AI real. Here's how to run small LLMs and vision models directly in the browser.",
+    "category": "AI",
+    "tags": ["Edge AI", "WebGPU", "Browser", "Performance"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-01-05T09:00:00.000Z",
+    "url": "articles/edge-ai-running-models-client-2026.html"
+  },
+  {
+    "title": "The API-First Architecture Pattern: A 2026 Guide",
+    "slug": "api-first-architecture-pattern-2026",
+    "excerpt": "API-first is more than a buzzword. Here's how to actually design, document, and evolve APIs that teams love to use.",
+    "category": "Backend",
+    "tags": ["API Design", "Architecture", "REST", "Developer Tools"],
+    "readingTime": "10 min read",
+    "publishedAt": "2026-01-03T09:00:00.000Z",
+    "url": "articles/api-first-architecture-pattern-2026.html"
+  },
+  {
+    "title": "Agentic Workflows: How AI Is Automating Software Development",
+    "slug": "agentic-workflows-ai-automating-software-development",
+    "excerpt": "AI agents are starting to write, test, and deploy code autonomously. Here's where this trend is going and what it means for developers.",
+    "category": "AI Agents",
+    "tags": ["AI Agents", "Automation", "Software Development", "AI"],
+    "readingTime": "9 min read",
+    "publishedAt": "2026-01-01T09:00:00.000Z",
+    "url": "articles/agentic-workflows-ai-automating-software-development.html"
+  },
+  {
+    "title": "Building a Real-Time Collaborative Editor With CRDTs",
+    "slug": "real-time-collaborative-editor-crdts",
+    "excerpt": "CRDTs are the data structure powering Figma, Notion, and Linear. Here's how to build your own conflict-free real-time editor.",
+    "category": "Backend",
+    "tags": ["CRDTs", "Real-Time", "Collaboration", "Distributed Systems"],
+    "readingTime": "14 min read",
+    "publishedAt": "2025-12-30T09:00:00.000Z",
+    "url": "articles/real-time-collaborative-editor-crdts.html"
+  },
+  {
+    "title": "Multimodal AI: Working With Text, Images, and Audio Together",
+    "slug": "multimodal-ai-text-images-audio",
+    "excerpt": "Multimodal models are changing what AI can do. Here's how to integrate text, image, and audio inputs into your AI applications.",
+    "category": "AI Research",
+    "tags": ["Multimodal", "AI", "Vision", "Audio"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-12-28T09:00:00.000Z",
+    "url": "articles/multimodal-ai-text-images-audio.html"
+  },
+  {
+    "title": "SQLite in Production: When and How to Use It",
+    "slug": "sqlite-in-production-when-and-how",
+    "excerpt": "SQLite handles millions of requests per day in production for some of the world's biggest apps. Here's when it's the right choice.",
+    "category": "Backend",
+    "tags": ["SQLite", "Database", "Backend", "Architecture"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-12-26T09:00:00.000Z",
+    "url": "articles/sqlite-in-production-when-and-how.html"
+  },
+  {
+    "title": "Model Context Protocol: The Standard Reshaping AI Tooling",
+    "slug": "model-context-protocol-reshaping-ai-tooling",
+    "excerpt": "MCP has emerged as the standard for connecting LLMs to tools and data sources. Here's what it is, how it works, and why it matters.",
+    "category": "AI",
+    "tags": ["MCP", "AI Tools", "LLMs", "Standards"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-12-24T09:00:00.000Z",
+    "url": "articles/model-context-protocol-reshaping-ai-tooling.html"
+  },
+  {
+    "title": "CI/CD for AI Models: From Training to Production",
+    "slug": "cicd-for-ai-models-training-to-production",
+    "excerpt": "Shipping ML models is different from shipping software. Here's how to build a CI/CD pipeline that handles training, evaluation, and deployment.",
+    "category": "Cloud & Infra",
+    "tags": ["CI/CD", "ML Ops", "AI", "DevOps"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-12-22T09:00:00.000Z",
+    "url": "articles/cicd-for-ai-models-training-to-production.html"
+  },
+  {
+    "title": "Deno 2 vs Node.js: The Honest Comparison",
+    "slug": "deno-2-vs-nodejs-honest-comparison",
+    "excerpt": "Deno 2 is now npm compatible and production ready. We compare it head-to-head with Node.js on performance, DX, and ecosystem maturity.",
+    "category": "Backend",
+    "tags": ["Deno", "Node.js", "JavaScript", "Runtime"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-12-20T09:00:00.000Z",
+    "url": "articles/deno-2-vs-nodejs-honest-comparison.html"
+  },
+  {
+    "title": "Prompt Injection Attacks: How to Protect Your AI App",
+    "slug": "prompt-injection-attacks-protect-ai-app",
+    "excerpt": "Prompt injection is the most underrated security threat in AI applications. Here's how attackers exploit it and how to defend against it.",
+    "category": "Security",
+    "tags": ["Security", "Prompt Injection", "AI Safety", "LLMs"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-12-18T09:00:00.000Z",
+    "url": "articles/prompt-injection-attacks-protect-ai-app.html"
+  },
+  {
+    "title": "Building a Semantic Search Engine From Scratch",
+    "slug": "building-semantic-search-engine-from-scratch",
+    "excerpt": "Keyword search is dead. Here's how to build a production semantic search engine using embeddings, vector databases, and reranking.",
+    "category": "Tutorial",
+    "tags": ["Semantic Search", "Embeddings", "Vector DB", "NLP"],
+    "readingTime": "15 min read",
+    "publishedAt": "2025-12-16T09:00:00.000Z",
+    "url": "articles/building-semantic-search-engine-from-scratch.html"
+  },
+  {
+    "title": "The Future of Frontend: AI-Assisted UI Development",
+    "slug": "future-frontend-ai-assisted-ui-development",
+    "excerpt": "AI is changing how we build UIs — from component generation to automatic accessibility fixes. Here's where the tooling is heading.",
+    "category": "Dev Tools",
+    "tags": ["Frontend", "AI", "UI Development", "Developer Tools"],
+    "readingTime": "8 min read",
+    "publishedAt": "2025-12-14T09:00:00.000Z",
+    "url": "articles/future-frontend-ai-assisted-ui-development.html"
+  },
+  {
+    "title": "Bun 2.0: The JavaScript Runtime That Changed Everything",
+    "slug": "bun-2-javascript-runtime-changed-everything",
+    "excerpt": "Bun 2.0 is faster, more compatible, and production-ready. Here's what changed and whether it's time to migrate from Node.",
+    "category": "Dev Tools",
+    "tags": ["Bun", "JavaScript", "Runtime", "Performance"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-12-12T09:00:00.000Z",
+    "url": "articles/bun-2-javascript-runtime-changed-everything.html"
+  },
+  {
+    "title": "Zero-Shot vs Few-Shot Learning: When to Use Each",
+    "slug": "zero-shot-vs-few-shot-learning-when-to-use",
+    "excerpt": "Zero-shot and few-shot prompting have different strengths. This guide breaks down when to use each approach and how to optimize results.",
+    "category": "AI",
+    "tags": ["Zero-Shot", "Few-Shot", "Prompting", "LLMs"],
+    "readingTime": "7 min read",
+    "publishedAt": "2025-12-10T09:00:00.000Z",
+    "url": "articles/zero-shot-vs-few-shot-learning-when-to-use.html"
+  },
+  {
+    "title": "AWS vs GCP vs Azure for AI Workloads in 2026",
+    "slug": "aws-gcp-azure-ai-workloads-2026",
+    "excerpt": "Which cloud actually wins for AI? We compared GPU availability, managed AI services, and total cost across AWS, GCP, and Azure.",
+    "category": "Cloud & Infra",
+    "tags": ["AWS", "GCP", "Azure", "Cloud AI"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-12-08T09:00:00.000Z",
+    "url": "articles/aws-gcp-azure-ai-workloads-2026.html"
+  },
+  {
+    "title": "How Diffusion Models Work: A Visual Explanation",
+    "slug": "how-diffusion-models-work-visual-explanation",
+    "excerpt": "Diffusion models power image generation, audio synthesis, and more. Here's an intuitive visual explanation of how they actually work.",
+    "category": "AI Research",
+    "tags": ["Diffusion Models", "AI Research", "Image Generation", "Deep Learning"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-12-06T09:00:00.000Z",
+    "url": "articles/how-diffusion-models-work-visual-explanation.html"
+  },
+  {
+    "title": "Svelte 5 vs React 19: Which Should You Choose?",
+    "slug": "svelte-5-vs-react-19-which-to-choose",
+    "excerpt": "Both frameworks have undergone major rewrites. We compare Svelte 5 and React 19 on performance, DX, and ecosystem for 2026 projects.",
+    "category": "Dev Tools",
+    "tags": ["Svelte", "React", "Frontend", "JavaScript"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-12-04T09:00:00.000Z",
+    "url": "articles/svelte-5-vs-react-19-which-to-choose.html"
+  },
+  {
+    "title": "The Hidden Costs of Microservices (And When to Use Them)",
+    "slug": "hidden-costs-microservices-when-to-use",
+    "excerpt": "Microservices aren't always the answer. Here's an honest look at the operational overhead and when a monolith is actually the better choice.",
+    "category": "Backend",
+    "tags": ["Microservices", "Architecture", "Monolith", "Backend"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-12-02T09:00:00.000Z",
+    "url": "articles/hidden-costs-microservices-when-to-use.html"
+  },
+  {
+    "title": "Anthropic's Claude 4: What Developers Need to Know",
+    "slug": "anthropic-claude-4-developers-guide",
+    "excerpt": "Claude 4 brings extended context, improved reasoning, and better tool use. Here's a practical developer's guide to what changed.",
+    "category": "AI Research",
+    "tags": ["Claude", "Anthropic", "LLMs", "AI Research"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-11-30T09:00:00.000Z",
+    "url": "articles/anthropic-claude-4-developers-guide.html"
+  },
+  {
+    "title": "Building Production-Grade Chatbots With Memory",
+    "slug": "production-chatbots-with-memory",
+    "excerpt": "Stateless chatbots are a dead end. Here's how to implement short-term, long-term, and episodic memory in production AI chat systems.",
+    "category": "Tutorial",
+    "tags": ["Chatbots", "Memory", "AI", "LLMs"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-11-28T09:00:00.000Z",
+    "url": "articles/production-chatbots-with-memory.html"
+  },
+  {
+    "title": "Kafka vs Pulsar vs Redpanda: Event Streaming in 2026",
+    "slug": "kafka-vs-pulsar-vs-redpanda-2026",
+    "excerpt": "Event streaming has never had more options. We compare Kafka, Pulsar, and Redpanda on throughput, latency, and operational complexity.",
+    "category": "Backend",
+    "tags": ["Kafka", "Pulsar", "Redpanda", "Event Streaming"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-11-26T09:00:00.000Z",
+    "url": "articles/kafka-vs-pulsar-vs-redpanda-2026.html"
+  },
+  {
+    "title": "LLM Context Windows: What 1M Tokens Actually Changes",
+    "slug": "llm-context-windows-1m-tokens-impact",
+    "excerpt": "Million-token context windows are now real. Here's what they change about RAG, long-document processing, and application architecture.",
+    "category": "AI Research",
+    "tags": ["Context Window", "LLMs", "RAG", "AI Research"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-11-24T09:00:00.000Z",
+    "url": "articles/llm-context-windows-1m-tokens-impact.html"
+  },
+  {
+    "title": "E2E Testing With Playwright: The Definitive Guide",
+    "slug": "e2e-testing-playwright-definitive-guide",
+    "excerpt": "Playwright has become the gold standard for E2E testing. Here's a complete guide from setup to CI integration and visual regression testing.",
+    "category": "Dev Tools",
+    "tags": ["Playwright", "Testing", "E2E", "Quality"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-11-22T09:00:00.000Z",
+    "url": "articles/e2e-testing-playwright-definitive-guide.html"
+  },
+  {
+    "title": "Serverless AI Inference: Cold Starts, Costs, and Trade-Offs",
+    "slug": "serverless-ai-inference-cold-starts-costs",
+    "excerpt": "Serverless inference is cheap but unpredictable. Here's a complete analysis of cold start times, pricing, and when to go serverless vs dedicated.",
+    "category": "Cloud & Infra",
+    "tags": ["Serverless", "AI Inference", "Cloud", "Performance"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-11-20T09:00:00.000Z",
+    "url": "articles/serverless-ai-inference-cold-starts-costs.html"
+  },
+  {
+    "title": "The Art of Technical Writing for Developers",
+    "slug": "art-of-technical-writing-for-developers",
+    "excerpt": "Good documentation is a competitive advantage. Here's how to write technical content that developers actually read and understand.",
+    "category": "Dev Tools",
+    "tags": ["Technical Writing", "Documentation", "Developer Tools", "Communication"],
+    "readingTime": "8 min read",
+    "publishedAt": "2025-11-18T09:00:00.000Z",
+    "url": "articles/art-of-technical-writing-for-developers.html"
+  },
+  {
+    "title": "Understanding Quantization: Making LLMs Smaller and Faster",
+    "slug": "understanding-quantization-llms-smaller-faster",
+    "excerpt": "Quantization lets you run large models on consumer hardware. Here's a clear explanation of INT4, INT8, and GGUF quantization methods.",
+    "category": "AI Research",
+    "tags": ["Quantization", "LLMs", "Performance", "Self-Hosted"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-11-16T09:00:00.000Z",
+    "url": "articles/understanding-quantization-llms-smaller-faster.html"
+  },
+  {
+    "title": "Event-Driven Architecture: Patterns and Anti-Patterns",
+    "slug": "event-driven-architecture-patterns-anti-patterns",
+    "excerpt": "Event-driven systems are powerful but easy to get wrong. Here are the patterns that work and the anti-patterns that will haunt you.",
+    "category": "Backend",
+    "tags": ["Event-Driven", "Architecture", "Distributed Systems", "Backend"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-11-14T09:00:00.000Z",
+    "url": "articles/event-driven-architecture-patterns-anti-patterns.html"
+  },
+  {
+    "title": "The 2026 Developer Toolchain: What the Best Teams Use",
+    "slug": "2026-developer-toolchain-best-teams",
+    "excerpt": "We surveyed 500 engineering teams to find the tools that correlate with shipping faster and breaking less. Here's what we found.",
+    "category": "Dev Tools",
+    "tags": ["Developer Tools", "Toolchain", "Productivity", "Engineering"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-11-12T09:00:00.000Z",
+    "url": "articles/2026-developer-toolchain-best-teams.html"
+  },
+  {
+    "title": "Mixture of Experts: The Architecture Behind Frontier Models",
+    "slug": "mixture-of-experts-architecture-frontier-models",
+    "excerpt": "MoE is the secret behind GPT-4, Mixtral, and many frontier models. Here's how it works and why it matters for the future of AI.",
+    "category": "AI Research",
+    "tags": ["MoE", "Architecture", "LLMs", "AI Research"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-11-10T09:00:00.000Z",
+    "url": "articles/mixture-of-experts-architecture-frontier-models.html"
+  },
+  {
+    "title": "GraphRAG: Combining Knowledge Graphs With RAG",
+    "slug": "graphrag-knowledge-graphs-with-rag",
+    "excerpt": "GraphRAG extends traditional RAG with structured knowledge graphs for dramatically better reasoning on complex, interconnected information.",
+    "category": "AI Research",
+    "tags": ["GraphRAG", "Knowledge Graphs", "RAG", "AI"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-11-08T09:00:00.000Z",
+    "url": "articles/graphrag-knowledge-graphs-with-rag.html"
+  },
+  {
+    "title": "Rate Limiting Patterns for High-Traffic APIs",
+    "slug": "rate-limiting-patterns-high-traffic-apis",
+    "excerpt": "Token bucket, sliding window, or fixed counter? Here's a complete guide to choosing and implementing rate limiting for production APIs.",
+    "category": "Backend",
+    "tags": ["Rate Limiting", "API", "Backend", "Performance"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-11-06T09:00:00.000Z",
+    "url": "articles/rate-limiting-patterns-high-traffic-apis.html"
+  },
+  {
+    "title": "AI-Powered Code Generation: The State of the Art",
+    "slug": "ai-powered-code-generation-state-of-art",
+    "excerpt": "From Copilot to Devin, AI code generation has come a long way. Here's an honest assessment of what it can and can't do in 2026.",
+    "category": "AI",
+    "tags": ["Code Generation", "AI", "Copilot", "Developer Tools"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-11-04T09:00:00.000Z",
+    "url": "articles/ai-powered-code-generation-state-of-art.html"
+  },
+  {
+    "title": "Load Testing Your AI Application With k6",
+    "slug": "load-testing-ai-application-k6",
+    "excerpt": "AI endpoints have unique load characteristics. Here's how to load test LLM APIs, streaming endpoints, and vector search with k6.",
+    "category": "Performance",
+    "tags": ["Load Testing", "k6", "Performance", "AI"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-11-02T09:00:00.000Z",
+    "url": "articles/load-testing-ai-application-k6.html"
+  },
+  {
+    "title": "Hugging Face in Production: Tips From the Trenches",
+    "slug": "hugging-face-production-tips-trenches",
+    "excerpt": "Hugging Face is great for research but production is a different beast. Here's what you need to know before deploying your first model.",
+    "category": "AI",
+    "tags": ["Hugging Face", "AI", "Production", "ML Ops"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-10-31T09:00:00.000Z",
+    "url": "articles/hugging-face-production-tips-trenches.html"
+  },
+  {
+    "title": "Monorepos in 2026: Turborepo, Nx, and the State of the Art",
+    "slug": "monorepos-2026-turborepo-nx",
+    "excerpt": "Monorepos have gone mainstream. Here's how Turborepo and Nx compare, and how to choose the right setup for your team.",
+    "category": "Dev Tools",
+    "tags": ["Monorepo", "Turborepo", "Nx", "Developer Tools"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-10-29T09:00:00.000Z",
+    "url": "articles/monorepos-2026-turborepo-nx.html"
+  },
+  {
+    "title": "Data Privacy in the Age of LLMs",
+    "slug": "data-privacy-age-of-llms",
+    "excerpt": "Sending user data to LLM APIs creates real privacy risks. Here's how to architect AI systems that respect privacy without sacrificing capability.",
+    "category": "Security",
+    "tags": ["Privacy", "LLMs", "Security", "Compliance"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-27T09:00:00.000Z",
+    "url": "articles/data-privacy-age-of-llms.html"
+  },
+  {
+    "title": "WebSockets vs SSE vs Long Polling: The Definitive Guide",
+    "slug": "websockets-sse-long-polling-definitive-guide",
+    "excerpt": "Real-time communication has many options. Here's when to use WebSockets, Server-Sent Events, or long polling for different use cases.",
+    "category": "Backend",
+    "tags": ["WebSockets", "SSE", "Real-Time", "Backend"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-25T09:00:00.000Z",
+    "url": "articles/websockets-sse-long-polling-definitive-guide.html"
+  },
+  {
+    "title": "Synthetic Data Generation for AI Training",
+    "slug": "synthetic-data-generation-ai-training",
+    "excerpt": "Real training data is expensive and limited. Here's how to use LLMs to generate high-quality synthetic data that actually improves model performance.",
+    "category": "AI Research",
+    "tags": ["Synthetic Data", "AI Training", "LLMs", "ML Ops"],
+    "readingTime": "12 min read",
+    "publishedAt": "2025-10-23T09:00:00.000Z",
+    "url": "articles/synthetic-data-generation-ai-training.html"
+  },
+  {
+    "title": "The Complete Guide to API Versioning",
+    "slug": "complete-guide-api-versioning",
+    "excerpt": "Breaking API changes break trust. Here's a comprehensive guide to API versioning strategies that keep your clients happy as you evolve.",
+    "category": "Backend",
+    "tags": ["API Versioning", "API Design", "Backend", "Developer Tools"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-10-21T09:00:00.000Z",
+    "url": "articles/complete-guide-api-versioning.html"
+  },
+  {
+    "title": "Text-to-SQL: Building Natural Language Database Interfaces",
+    "slug": "text-to-sql-natural-language-database-interfaces",
+    "excerpt": "Let users query your database in plain English. Here's how to build reliable text-to-SQL systems with LLMs, with guardrails against injection.",
+    "category": "Tutorial",
+    "tags": ["Text-to-SQL", "NLP", "Database", "LLMs"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-10-19T09:00:00.000Z",
+    "url": "articles/text-to-sql-natural-language-database-interfaces.html"
+  },
+  {
+    "title": "OpenAI o3 vs Claude 3.7: Reasoning Model Showdown",
+    "slug": "openai-o3-vs-claude-3-7-reasoning-showdown",
+    "excerpt": "Reasoning models have changed what AI can do. We pit OpenAI o3 against Claude 3.7 on math, coding, logic, and real-world tasks.",
+    "category": "AI Research",
+    "tags": ["OpenAI", "Claude", "Reasoning", "Benchmarks"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-10-17T09:00:00.000Z",
+    "url": "articles/openai-o3-vs-claude-3-7-reasoning-showdown.html"
+  },
+  {
+    "title": "Caching Strategies for AI Applications",
+    "slug": "caching-strategies-ai-applications",
+    "excerpt": "LLM calls are expensive. Here's a complete caching strategy covering semantic caching, prompt caching, and response deduplication.",
+    "category": "Performance",
+    "tags": ["Caching", "AI", "Performance", "Cost Optimization"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-15T09:00:00.000Z",
+    "url": "articles/caching-strategies-ai-applications.html"
+  },
+  {
+    "title": "The Rise of AI-Native Databases",
+    "slug": "rise-of-ai-native-databases",
+    "excerpt": "A new category of database is emerging, built from the ground up for AI workloads. Here's what AI-native databases offer and when to use them.",
+    "category": "AI",
+    "tags": ["AI Databases", "Vector DB", "Database", "AI"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-10-13T09:00:00.000Z",
+    "url": "articles/rise-of-ai-native-databases.html"
+  },
+  {
+    "title": "Feature Flags at Scale: Architecture and Best Practices",
+    "slug": "feature-flags-at-scale-architecture",
+    "excerpt": "Feature flags are now a core part of every serious engineering org. Here's how to build and manage them at scale without creating chaos.",
+    "category": "Dev Tools",
+    "tags": ["Feature Flags", "DevOps", "Architecture", "Developer Tools"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-11T09:00:00.000Z",
+    "url": "articles/feature-flags-at-scale-architecture.html"
+  },
+  {
+    "title": "Chain of Thought Prompting: Advanced Techniques",
+    "slug": "chain-of-thought-prompting-advanced-techniques",
+    "excerpt": "Chain-of-thought prompting dramatically improves LLM reasoning. Here are advanced techniques beyond the basics that actually work in production.",
+    "category": "AI",
+    "tags": ["Chain of Thought", "Prompting", "LLMs", "AI"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-09T09:00:00.000Z",
+    "url": "articles/chain-of-thought-prompting-advanced-techniques.html"
+  },
+  {
+    "title": "GitHub Actions in 2026: Advanced Workflows and Tips",
+    "slug": "github-actions-2026-advanced-workflows",
+    "excerpt": "GitHub Actions has evolved into a powerful automation platform. Here are advanced workflows, caching strategies, and tips for faster CI.",
+    "category": "Dev Tools",
+    "tags": ["GitHub Actions", "CI/CD", "Automation", "DevOps"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-10-07T09:00:00.000Z",
+    "url": "articles/github-actions-2026-advanced-workflows.html"
+  },
+  {
+    "title": "AI Safety for Developers: Practical Guardrails",
+    "slug": "ai-safety-developers-practical-guardrails",
+    "excerpt": "Building safe AI applications isn't just about ethics — it's about reliability. Here's how to implement practical guardrails in your AI stack.",
+    "category": "Security",
+    "tags": ["AI Safety", "Guardrails", "LLMs", "Security"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-10-05T09:00:00.000Z",
+    "url": "articles/ai-safety-developers-practical-guardrails.html"
+  },
+  {
+    "title": "Building a Developer Blog With Automated SEO",
+    "slug": "developer-blog-automated-seo",
+    "excerpt": "Technical content can rank extremely well with the right structure. Here's how to build and automate SEO for a developer-focused blog.",
+    "category": "Tutorial",
+    "tags": ["SEO", "Blog", "Automation", "Content"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-10-03T09:00:00.000Z",
+    "url": "articles/developer-blog-automated-seo.html"
+  },
+  {
+    "title": "Elixir for AI Backends: Why It's Worth Learning",
+    "slug": "elixir-for-ai-backends-worth-learning",
+    "excerpt": "Elixir's concurrency model makes it uniquely suited for AI streaming backends and real-time systems. Here's how to get started.",
+    "category": "Backend",
+    "tags": ["Elixir", "Phoenix", "Backend", "Concurrency"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-10-01T09:00:00.000Z",
+    "url": "articles/elixir-for-ai-backends-worth-learning.html"
+  },
+  {
+    "title": "Deploying AI Applications on Cloudflare Workers",
+    "slug": "deploying-ai-applications-cloudflare-workers",
+    "excerpt": "Cloudflare Workers AI brings inference to the edge. Here's how to deploy AI applications with global low latency on the Cloudflare network.",
+    "category": "Cloud & Infra",
+    "tags": ["Cloudflare", "Edge AI", "Workers", "Deployment"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-09-29T09:00:00.000Z",
+    "url": "articles/deploying-ai-applications-cloudflare-workers.html"
+  },
+  {
+    "title": "The Complete Guide to LLM Tool Calling",
+    "slug": "complete-guide-llm-tool-calling",
+    "excerpt": "Tool calling transforms LLMs from text generators into action-takers. Here's everything you need to know to implement it reliably.",
+    "category": "Tutorial",
+    "tags": ["Tool Calling", "LLMs", "AI Agents", "Tutorial"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-09-27T09:00:00.000Z",
+    "url": "articles/complete-guide-llm-tool-calling.html"
+  },
+  {
+    "title": "Database Indexing: The Complete Developer Guide",
+    "slug": "database-indexing-complete-developer-guide",
+    "excerpt": "Poor indexing is the #1 cause of slow queries. This guide covers B-tree, hash, GIN, and vector indexes with real-world examples.",
+    "category": "Backend",
+    "tags": ["Database", "Indexing", "Performance", "SQL"],
+    "readingTime": "13 min read",
+    "publishedAt": "2025-09-25T09:00:00.000Z",
+    "url": "articles/database-indexing-complete-developer-guide.html"
+  },
+  {
+    "title": "The Pragmatic Guide to AI Ethics for Developers",
+    "slug": "pragmatic-guide-ai-ethics-developers",
+    "excerpt": "AI ethics isn't abstract — it has real implications for the systems you build. A practical, non-preachy guide to building AI responsibly.",
+    "category": "AI Research",
+    "tags": ["AI Ethics", "AI Safety", "Responsible AI", "Developer Tools"],
+    "readingTime": "9 min read",
+    "publishedAt": "2025-09-23T09:00:00.000Z",
+    "url": "articles/pragmatic-guide-ai-ethics-developers.html"
+  },
+  {
+    "title": "Temporal: The Workflow Engine Every Developer Should Know",
+    "slug": "temporal-workflow-engine-every-developer-should-know",
+    "excerpt": "Temporal solves durable execution in distributed systems. Here's why it's becoming the backbone of AI agent orchestration pipelines.",
+    "category": "Backend",
+    "tags": ["Temporal", "Workflows", "Distributed Systems", "AI Agents"],
+    "readingTime": "11 min read",
+    "publishedAt": "2025-09-21T09:00:00.000Z",
+    "url": "articles/temporal-workflow-engine-every-developer-should-know.html"
+  },
+  {
+    "title": "10 Python Libraries That Will Change How You Build AI Apps",
+    "slug": "10-python-libraries-change-how-you-build-ai-apps",
+    "excerpt": "Beyond the usual suspects — 10 underrated Python libraries that will make your AI applications faster, cleaner, and more reliable.",
+    "category": "Tutorial",
+    "tags": ["Python", "Libraries", "AI", "Developer Tools"],
+    "readingTime": "8 min read",
+    "publishedAt": "2025-09-19T09:00:00.000Z",
+    "url": "articles/10-python-libraries-change-how-you-build-ai-apps.html"
+  },
+  {
+    "title": "How to Build a High-Performance Recommendation Engine",
+    "slug": "build-high-performance-recommendation-engine",
+    "excerpt": "Recommendation systems power engagement for the biggest products in the world. Here's how to build one from scratch using embeddings and ANN search.",
+    "category": "Tutorial",
+    "tags": ["Recommendation Engine", "Embeddings", "AI", "Backend"],
+    "readingTime": "14 min read",
+    "publishedAt": "2025-09-17T09:00:00.000Z",
+    "url": "articles/build-high-performance-recommendation-engine.html"
+  },
+  {
+    "title": "n8n for Developers: Automation Beyond the Basics",
+    "slug": "n8n-for-developers-automation-beyond-basics",
+    "excerpt": "n8n is more powerful than most developers realize. Here's how to use code nodes, error handling, and custom integrations for serious automation.",
+    "category": "Dev Tools",
+    "tags": ["n8n", "Automation", "Developer Tools", "Workflows"],
+    "readingTime": "10 min read",
+    "publishedAt": "2025-09-15T09:00:00.000Z",
+    "url": "articles/n8n-for-developers-automation-beyond-basics.html"
   }
 ]
