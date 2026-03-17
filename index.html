@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeuralFeed — AI & Dev Articles</title>
+<meta name="description" content="Clear, practical articles on AI, developer tools, and modern software engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --indigo: #6366f1;
+    --indigo-light: #ede9fe;
+    --indigo-dark: #4f46e5;
+    --green: #10b981;
+    --green-light: #d1fae5;
+    --amber: #f59e0b;
+    --amber-light: #fef3c7;
+    --font: 'Inter', sans-serif;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.10);
+
+    /* theme tokens (light default) */
+    --bg: var(--gray-50);
+    --surface: #ffffff;
+    --surface-2: var(--gray-100);
+    --text: var(--gray-900);
+    --muted: var(--gray-500);
+    --muted-2: var(--gray-400);
+    --border: var(--gray-200);
+    --border-2: rgba(17,24,39,0.10);
+    --nav-bg: rgba(255,255,255,0.85);
+    --focus-ring: rgba(99,102,241,0.38);
+    --card-shadow: var(--shadow);
+    --card-shadow-hover: var(--shadow-md);
+    --btn-ease: cubic-bezier(.2,.8,.2,1);
+    --btn-dur: 220ms;
+    --btn-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  }
+
+  html[data-theme="dark"] {
+    /* “black” theme */
+    --bg: #07070a;
+    --surface: #0d0d12;
+    --surface-2: #13131a;
+    --text: #f3f4f6;
+    --muted: rgba(243,244,246,0.72);
+    --muted-2: rgba(243,244,246,0.52);
+    --border: rgba(255,255,255,0.10);
+    --border-2: rgba(255,255,255,0.16);
+    --nav-bg: rgba(13,13,18,0.75);
+    --focus-ring: rgba(99,102,241,0.55);
+    --card-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 16px 30px rgba(0,0,0,0.55);
+    --card-shadow-hover: 0 1px 0 rgba(255,255,255,0.06), 0 20px 45px rgba(0,0,0,0.62);
+    --btn-shadow: 0 18px 40px rgba(0,0,0,0.58);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--indigo);
+    border-radius: 50%;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: color 180ms var(--btn-ease), background-color 180ms var(--btn-ease);
+  }
+
+  .nav-links a:hover {
+    color: var(--text);
+    background: var(--surface-2);
+  }
+
+  .nav-cta {
+    background: var(--indigo) !important;
+    color: white !important;
+    margin-left: 0.5rem;
+  }
+
+  .nav-cta:hover {
+    background: var(--indigo-dark) !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: color-mix(in srgb, var(--indigo) 16%, var(--surface));
+    color: color-mix(in srgb, var(--indigo) 86%, var(--text));
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 99px;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--indigo);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--indigo);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 420px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition:
+      transform var(--btn-dur) var(--btn-ease),
+      box-shadow var(--btn-dur) var(--btn-ease),
+      background-color var(--btn-dur) var(--btn-ease),
+      border-color var(--btn-dur) var(--btn-ease),
+      color var(--btn-dur) var(--btn-ease),
+      opacity var(--btn-dur) var(--btn-ease);
+    cursor: pointer;
+    border: none;
+    transform: translateY(0);
+    will-change: transform;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus-ring), var(--btn-shadow);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .btn[disabled],
+  .btn[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-primary {
+    background: var(--indigo);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--indigo-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+  }
+
+  .btn-ghost {
+    background: var(--surface);
+    color: color-mix(in srgb, var(--text) 82%, var(--muted));
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--border-2);
+    background: var(--surface-2);
+    transform: translateY(-1px);
+    box-shadow: var(--btn-shadow);
+  }
+
+  .btn-invert {
+    background: #ffffff;
+    color: var(--indigo-dark);
+    border: 1px solid rgba(255,255,255,0.9);
+  }
+
+  .btn-invert:hover {
+    background: rgba(255,255,255,0.92);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+  }
+
+  .btn-icon {
+    padding: 10px 12px;
+    width: 40px;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    margin-left: 0.6rem;
+  }
+
+  /* HERO STATS */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .stat-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-num {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-num span { color: var(--indigo); }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted-2);
+    font-weight: 500;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .see-all {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--indigo);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .see-all:hover { text-decoration: underline; }
+
+  /* ── FEATURED ── */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.2s;
+    box-shadow: var(--card-shadow);
+  }
+
+  .card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--border-2);
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--indigo-light) 0%, #ddd6fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    letter-spacing: 0.03em;
+  }
+
+  .tag-indigo { background: var(--indigo-light); color: var(--indigo-dark); }
+  .tag-green { background: var(--green-light); color: #065f46; }
+  .tag-amber { background: var(--amber-light); color: #92400e; }
+
+  .card-date {
+    font-size: 0.75rem;
+    color: var(--muted-2);
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  }
+
+  .read-time {
+    font-size: 0.75rem;
+    color: var(--muted-2);
+    font-weight: 500;
+  }
+
+  .read-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--indigo);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  /* SIDE CARDS */
+  .side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card-small {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.2s;
+    box-shadow: var(--card-shadow);
+    flex: 1;
+  }
+
+  .card-small:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--border-2);
+  }
+
+  /* ── ARTICLES GRID ── */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  /* ── TOPICS ── */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .topic-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.2s;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+  }
+
+  .topic-card:hover {
+    border-color: var(--indigo);
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.08);
+    transform: translateY(-1px);
+  }
+
+  .topic-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .topic-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .topic-count {
+    font-size: 0.75rem;
+    color: var(--muted-2);
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--indigo);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+  }
+
+  .newsletter h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .nl-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .nl-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    font-family: var(--font);
+    font-size: 0.875rem;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+  }
+
+  .nl-form input::placeholder { color: rgba(255,255,255,0.5); }
+
+  .nl-form input:focus { background: rgba(255,255,255,0.25); }
+
+  .nl-form button { white-space: nowrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .footer-logo span { color: var(--indigo); }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--muted-2);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: color-mix(in srgb, var(--text) 72%, var(--muted)); }
+
+  .footer-copy {
+    font-size: 0.78rem;
+    color: var(--muted-2);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+    }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .side-cards { flex-direction: row; }
+    .articles-grid { grid-template-columns: 1fr 1fr; }
+    .topics-grid { grid-template-columns: repeat(2, 1fr); }
+    .newsletter { padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    .articles-grid { grid-template-columns: 1fr; }
+    .side-cards { flex-direction: column; }
+    .nav-links { display: none; }
+    .hero { padding: 2.5rem 1.5rem 2rem; }
+    .nl-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-dot"></span>
+      NeuralFeed
+    </a>
+    <div class="nav-links">
+      <a href="#">AI</a>
+      <a href="#">Dev Tools</a>
+      <a href="#">Tutorials</a>
+      <a href="#">Open Source</a>
+      <a href="#newsletter" class="btn btn-primary nav-cta">Subscribe</a>
+    </div>
+    <button class="btn btn-ghost btn-icon theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">AI-powered articles, 3x/week</div>
+    <h1>Tech writing that<br><em>actually helps</em></h1>
+    <p>No fluff. No filler. Clear, practical deep dives on AI, developer tools, and the software ecosystem — written by AI, curated for quality.</p>
+    <div class="hero-actions">
+      <a href="#articles" class="btn btn-primary">Read articles →</a>
+      <a href="#topics" class="btn btn-ghost">Browse topics</a>
+    </div>
+  </div>
+  <div class="hero-stats fade-in">
+    <div class="stat-card">
+      <div class="stat-num">240<span>+</span></div>
+      <div class="stat-label">Articles published</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">18<span>k</span></div>
+      <div class="stat-label">Monthly readers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3<span>×</span></div>
+      <div class="stat-label">Weekly drops</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Free forever</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURED -->
+<section class="section" id="articles">
+  <div class="section-header">
+    <span class="section-title">Featured this week</span>
+    <a href="#" class="see-all">View all →</a>
+  </div>
+  <div class="featured-grid fade-in">
+    <a href="#" class="card">
+      <div class="card-image">🧠</div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-indigo">AI Research</span>
+          <span class="card-date">Mar 8, 2026</span>
+        </div>
+        <h2>The Attention Mechanism Revolution: How Modern LLMs Think</h2>
+        <p>A technical deep dive into transformer architectures, from vanilla attention to the sparse, linear, and flash variants powering today's frontier models.</p>
+        <div class="card-footer">
+          <span class="read-time">8 min read</span>
+          <span class="read-link">Read article →</span>
+        </div>
+      </div>
+    </a>
+    <div class="side-cards">
+      <a href="#" class="card-small">
+        <div class="card-meta">
+          <span class="tag tag-green">Dev Tools</span>
+          <span class="card-date">Mar 6</span>
+        </div>
+        <h3>Cursor vs Windsurf vs Copilot: A Real Benchmark</h3>
+        <p>We tested 3 AI editors on 50 real-world tasks. The results may surprise you.</p>
+        <div class="card-footer">
+          <span class="read-time">11 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </a>
+      <a href="#" class="card-small">
+        <div class="card-meta">
+          <span class="tag tag-amber">Open Source</span>
+          <span class="card-date">Mar 4</span>
+        </div>
+        <h3>Production RAG With Llama 3 and PgVector Under $20/mo</h3>
+        <p>A fully self-hosted retrieval-augmented generation stack, step by step.</p>
+        <div class="card-footer">
+          <span class="read-time">14 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LATEST -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-title">Latest articles</span>
+    <a href="#" class="see-all">View all →</a>
+  </div>
+  <div class="articles-grid fade-in">
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-indigo">AI</span>
+          <span class="card-date">Mar 7</span>
+        </div>
+        <h3>Fine-Tuning vs RAG: When to Use Which</h3>
+        <p>A practical decision framework for choosing the right approach to adapt LLMs to your domain.</p>
+        <div class="card-footer">
+          <span class="read-time">8 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-green">Backend</span>
+          <span class="card-date">Mar 6</span>
+        </div>
+        <h3>Async Python in 2026: asyncio Patterns That Scale</h3>
+        <p>Move beyond basic coroutines — TaskGroups, exception groups, and structured concurrency.</p>
+        <div class="card-footer">
+          <span class="read-time">11 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-amber">Tutorial</span>
+          <span class="card-date">Mar 5</span>
+        </div>
+        <h3>Streaming LLM APIs With FastAPI and SSE</h3>
+        <p>Full walkthrough for a production-ready streaming endpoint with retry logic and token counting.</p>
+        <div class="card-footer">
+          <span class="read-time">14 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-indigo">AI</span>
+          <span class="card-date">Mar 4</span>
+        </div>
+        <h3>Prompt Engineering Is Dead. Long Live System Design</h3>
+        <p>Why the future of AI products is architecture, not prompt tricks.</p>
+        <div class="card-footer">
+          <span class="read-time">7 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-green">Dev Tools</span>
+          <span class="card-date">Mar 3</span>
+        </div>
+        <h3>Nix Flakes for Python: Finally Reproducible Environments</h3>
+        <p>Stop fighting virtualenv hell. This Nix setup works across macOS and Linux.</p>
+        <div class="card-footer">
+          <span class="read-time">10 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="card">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="tag tag-amber">Open Source</span>
+          <span class="card-date">Mar 2</span>
+        </div>
+        <h3>12 Open-Source AI Projects to Watch in 2026</h3>
+        <p>From inference engines to agent frameworks — the repos shipping the most interesting code.</p>
+        <div class="card-footer">
+          <span class="read-time">6 min read</span>
+          <span class="read-link">Read →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TOPICS -->
+<section class="section" id="topics">
+  <div class="section-header">
+    <span class="section-title">Browse by topic</span>
+  </div>
+  <div class="topics-grid fade-in">
+    <a href="#" class="topic-card">
+      <span class="topic-icon">🧠</span>
+      <div class="topic-name">AI Research</div>
+      <div class="topic-count">48 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">🛠</span>
+      <div class="topic-name">Dev Tools</div>
+      <div class="topic-count">61 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">📖</span>
+      <div class="topic-name">Tutorials</div>
+      <div class="topic-count">74 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">🐙</span>
+      <div class="topic-name">Open Source</div>
+      <div class="topic-count">39 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">⚡</span>
+      <div class="topic-name">Performance</div>
+      <div class="topic-count">22 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">🔐</span>
+      <div class="topic-name">Security</div>
+      <div class="topic-count">18 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">☁️</span>
+      <div class="topic-name">Cloud & Infra</div>
+      <div class="topic-count">31 articles</div>
+    </a>
+    <a href="#" class="topic-card">
+      <span class="topic-icon">🤖</span>
+      <div class="topic-name">AI Agents</div>
+      <div class="topic-count">27 articles</div>
+    </a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="section" id="newsletter">
+  <div class="newsletter fade-in">
+    <h2>Stay in the loop</h2>
+    <p>3 articles per week. Practical, clear, no noise.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com" id="nl-email">
+      <button class="btn btn-invert" onclick="handleSubscribe()">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Neural<span>Feed</span></div>
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">RSS</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="footer-copy">© 2026 NeuralFeed. Built with AI.</div>
+  </div>
+</footer>
+
+<script>
+  // Theme
+  (function initTheme() {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+  })();
+
+  function updateThemeToggleIcon() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    btn.textContent = isDark ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Theme toggle interactions
+  updateThemeToggleIcon();
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+    updateThemeToggleIcon();
+  });
+
+  // Newsletter
+  function handleSubscribe() {
+    const input = document.getElementById('nl-email');
+    if (input.value.includes('@')) {
+      input.value = '✓ You\'re subscribed!';
+      input.style.background = 'rgba(255,255,255,0.3)';
+    } else {
+      input.style.outline = '2px solid rgba(255,255,255,0.5)';
+      setTimeout(() => input.style.outline = '', 1500);
+    }
+  }
+</script>
+</body>
+</html>
