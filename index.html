@@ -793,43 +793,43 @@
   <div class="section-header">
     <span class="section-title">Browse by topic</span>
   </div>
-  <div class="topics-grid fade-in">
-    <a href="#" class="topic-card">
+  <div class="topics-grid fade-in" id="topics-grid">
+    <a href="#" class="topic-card" data-category="AI Research">
       <span class="topic-icon">🧠</span>
       <div class="topic-name">AI Research</div>
       <div class="topic-count">48 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Dev Tools">
       <span class="topic-icon">🛠</span>
       <div class="topic-name">Dev Tools</div>
       <div class="topic-count">61 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Tutorial">
       <span class="topic-icon">📖</span>
       <div class="topic-name">Tutorials</div>
       <div class="topic-count">74 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Open Source">
       <span class="topic-icon">🐙</span>
       <div class="topic-name">Open Source</div>
       <div class="topic-count">39 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Performance">
       <span class="topic-icon">⚡</span>
       <div class="topic-name">Performance</div>
       <div class="topic-count">22 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Security">
       <span class="topic-icon">🔐</span>
       <div class="topic-name">Security</div>
       <div class="topic-count">18 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="Cloud & Infra">
       <span class="topic-icon">☁️</span>
       <div class="topic-name">Cloud & Infra</div>
       <div class="topic-count">31 articles</div>
     </a>
-    <a href="#" class="topic-card">
+    <a href="#" class="topic-card" data-category="AI Agents">
       <span class="topic-icon">🤖</span>
       <div class="topic-name">AI Agents</div>
       <div class="topic-count">27 articles</div>
@@ -1090,6 +1090,19 @@
     if (!category) return;
     e.preventDefault();
     applyFilter(category);
+  });
+
+  // Wire up topic cards
+  document.getElementById('topics-grid')?.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    const card = target.closest('.topic-card');
+    if (!(card instanceof HTMLElement)) return;
+    const category = card.getAttribute('data-category');
+    if (!category) return;
+    e.preventDefault();
+    applyFilter(category);
+    document.getElementById('articles')?.scrollIntoView({ behavior: 'smooth' });
   });
 
   // Initial load
